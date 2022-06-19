@@ -1,3 +1,3 @@
-![Aerolab](./src/assets/logo.svg "Aerolab")
+![Aerolab](./assets/logo.svg "Aerolab")
 
 # Aerolab challenge
