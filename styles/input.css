@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 
+
 body {
     @apply bg-black-300
 
 }
+
 
 .filter-button {
     @apply checked:bg-black-100 text-white rounded-3xl md:px-5 px-2 md:text-xl py-2 cursor-pointer select-none

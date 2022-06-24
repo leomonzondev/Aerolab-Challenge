@@ -4,6 +4,7 @@ import { createContext, useEffect, useReducer, useState } from "react";
 const initialState = {
      user:{},
      products: [],
+     redeemed:[]
 }
 
 export const UserContext = createContext()
@@ -30,9 +31,17 @@ const reducer = ( state, action ) => {
         }
 
         case "BUY_PRODUCT": {
-            if( state.user.points < payload ) return console.log('No tienes suficientes puntos para canjear el producto')
-
             return { ...state, user: {...state.user, points: -payload }  }
+        }
+
+        case "REDEEMED": {
+            
+            const exist = state.redeemed.find(item => item._id === payload._id)
+           
+            const add = exist ? [payload] : [...state.redeemed, payload]
+           
+
+            return { ...state, redeemed: add }
         }
 
         default:

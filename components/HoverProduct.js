@@ -14,15 +14,26 @@ export const HoverProduct = ({ product, insufficientPoints }) => {
     
     const { enqueueSnackbar } = useSnackbar();
 
-    const handleBuy = () => {
 
-        if(insufficientPoints){
-          enqueueSnackbar("You don't have enough points to swap", { variant: "error"})
-        } else {
-          dispatch({type: "BUY_PRODUCT", payload: product.cost - points})
-          enqueueSnackbar("Product redeemed", { variant: "success"})
+
+    const handleBuy = () => {
+    
+        dispatch({type: "BUY_PRODUCT", payload: product.cost - points})
+
+        const exist = state.redeemed.find(item => item._id === product._id)
+
+        if(exist) {
+            const newQ = exist.quantity += 1
+            
+            dispatch({type: "REDEEMED", payload: {...product, quantity: newQ }})
+        }else{
+            dispatch({type: "REDEEMED", payload: {...product, quantity: 1 }})
         }
-  
+
+        enqueueSnackbar( `${product.name} redeemed`, { variant: "success"})
+        
+
+
     }
 
 

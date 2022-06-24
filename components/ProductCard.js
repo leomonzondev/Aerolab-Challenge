@@ -20,17 +20,6 @@ export const ProductCard = ({product}) => {
     const points = state.user.points
     const insufficientPoints = product.cost > points
 
-    const handleBuy = () => {
-
-      if(insufficientPoints){
-        enqueueSnackbar("You don't have enough points to swap", { variant: "error"})
-      } else {
-        dispatch({type: "BUY_PRODUCT", payload: product.cost - points})
-        enqueueSnackbar("Product swaped", { variant: "success"})
-      }
-
-    }
-
     const handleHover = () => {
       setIsHover(!isHover)
      

@@ -80,7 +80,7 @@ export const Filter = ({ products, filterProducts, setProductsList, productsShow
      
         <div className='flex gap-2 md:gap-6 flex-wrap justify-center'>
                 
-            <div>
+            <div className='md:mb-0 mb-2'>
                 <label htmlFor='tipo'></label>
                 <select defaultValue="all" onChange={(e) => handleValue(e)} id='tipo' className="  text-black-100  text-sm rounded-lg p-2.5 focus:outline-none">
                     <option value="all" >All products</option>
