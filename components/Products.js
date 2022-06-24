@@ -6,7 +6,7 @@ import { ProductCard } from './ProductCard'
 
 export const Products = () => {
 
-    const { state, dispatch } = useContext( UserContext )
+    const { state } = useContext( UserContext )
 
     useEffect(() => {
         setProductsList([...state.products])
@@ -19,7 +19,8 @@ export const Products = () => {
     const productsPerPage = 16
     const pagesVisited = pageNumber * productsPerPage
 
-    
+    const productsShow = productsList.slice(pagesVisited, pagesVisited + productsPerPage)
+
     const displayProducts = productsList
         .slice(pagesVisited, pagesVisited + productsPerPage)
         .map(product =>  <ProductCard key={product._id} product={product} />)
@@ -30,8 +31,8 @@ export const Products = () => {
        
      
         <div className='flex flex-wrap justify-center pt-5 md:pt-0 md:justify-between md:gap-4 md:mx-24'>
-            <Filter products={[...state.products]} setProductsList={setProductsList} />
-            <PageArrow setPageNumber={setPageNumber} pageNumber={pageNumber}/>
+            <Filter products={[...state.products]} filterProducts={productsList} setProductsList={setProductsList} productsShow={productsShow} productsList={productsList} />
+            <PageArrow setPageNumber={setPageNumber} pageNumber={pageNumber} products={productsList} />
         </div>
 
         <div className='flex gap-4 flex-wrap justify-center '>
@@ -42,8 +43,8 @@ export const Products = () => {
             }
         </div>
         <div className='flex justify-between md:mx-24 mx-14 mt-14 items-center md:pb-0 pb-10'>
-            <p className='text-xl text-black-100'>{productsPerPage} of {productsList.length} products</p>
-            <PageArrow setPageNumber={setPageNumber} pageNumber={pageNumber}/>
+            <p className='text-xl text-black-100'>{productsShow.length} of {productsList.length} products</p>
+            <PageArrow setPageNumber={setPageNumber} pageNumber={pageNumber} products={productsList}/>
         </div>
 
     </div>

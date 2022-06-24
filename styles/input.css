@@ -9,13 +9,15 @@ body {
 }
 
 .filter-button {
-    @apply bg-blue text-white rounded-3xl md:px-5 px-2 md:text-xl py-2 cursor-pointer
+    @apply checked:bg-black-100 text-white rounded-3xl md:px-5 px-2 md:text-xl py-2 cursor-pointer select-none
 
 }
+
 
 .filter-button input {
-    
     @apply hidden
-    
+
 }
+
+
 

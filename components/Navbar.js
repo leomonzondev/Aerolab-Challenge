@@ -29,17 +29,17 @@ export const Navbar = () => {
   }
 
   return (
-    <div className='w-full bg-white h-20 flex items-center justify-between md:px-10 px-4 drop-shadow-md'>
+    <div className='w-full bg-white z-10 h-20 flex items-center justify-between md:px-10 px-4 drop-shadow-md fixed'>
       
       <Image src={logo} />
       
       <div className='gap-2 flex items-center'>
 
-        <p className='text-2xl text-black-100'>{user.name}</p>
+        <p className='text-2xl text-black-100 '>{user.name}</p>
 
-        <div className='bg-black-300  rounded-full px-5 py-2 flex  gap-1 cursor-pointer'>
+        <div className='bg-black-300  rounded-full px-5 py-2 flex  gap-1 cursor-pointer text-black-100 hover:text-blue' onClick={ handleAddPoints} >
           
-          <p className='text-2xl text-black-100 hover:text-blue ' onClick={ handleAddPoints} >{user.points}</p>
+          <p className='text-2xl   ' >{user.points}</p>
           
           <Image src={coin} width={28} />
 

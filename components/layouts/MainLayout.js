@@ -29,14 +29,14 @@ export const MainLayout = ({ children, title, pageDescription, imageFullUrl }) =
 
             </Head>
 
-            <nav>
+            <nav className="md:pb-28 pb-20">
                 <Navbar />
             </nav>
 
-            <div className="w-full h-56 md:h-[500px] md:mt-2 ">
-                <div className="overflow-hidden mt-2 md:my-10 md:mx-10 h-full bg-[url('../assets/header-x2.png')] bg-right md:bg-center bg-cover bg-no-repeat flex items-end">
+            <div className="w-fullh-56 md:h-[500px] h-48 ">
+                <div className="overflow-hidden md: md:mx-10 h-full bg-[url('../assets/header-x2.png')] bg-right md:bg-center bg-cover bg-no-repeat flex items-end">
              
-                <h1 className=" md:pl-32 pl-3 md:pb-24 text-white text-7xl md:text-8xl font-bold">Electronics</h1>
+                <h1 className=" md:pl-32 pl-3 md:pb-24 text-white text-6xl md:text-8xl font-bold">Electronics</h1>
                 </div>
 
                 

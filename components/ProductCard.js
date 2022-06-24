@@ -46,7 +46,7 @@ export const ProductCard = ({product}) => {
 
   return (
     <>
-    <div className={` bg-white rounded-sm  drop-shadow-sm relative`} onMouseEnter={handleHover} onMouseLeave={handleHover} >
+    <div className={` bg-white rounded-sm  drop-shadow-sm relative transition-opacity`} onMouseEnter={handleHover} onMouseLeave={handleHover} >
       
       <div className='absolute z-10 right-0 m-3'>
         {
