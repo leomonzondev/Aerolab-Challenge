@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { UserContext } from '../context/Context'
 import { useSnackbar } from 'notistack'
 import { HoverProduct } from './HoverProduct'
+import { motion, AnimatePresence } from "framer-motion";
 
 
 import coin from '../assets/icons/coin.svg'
@@ -35,7 +36,18 @@ export const ProductCard = ({product}) => {
 
   return (
     <>
-    <div className={` bg-white rounded-sm  drop-shadow-sm relative transition-opacity`} onMouseEnter={handleHover} onMouseLeave={handleHover} >
+    <motion.div
+        layout
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        initial={{ opacity: 0.2 }}
+        transition={{
+          duration: 0.2,
+          type: "tween",
+          stiffness: 200,
+          damping: 30,
+        }}
+    className={` bg-white rounded-sm  drop-shadow-sm relative transition-opacity`} onMouseEnter={handleHover} onMouseLeave={handleHover} >
       
       <div className='absolute z-10 right-0 m-3'>
         {
@@ -58,7 +70,7 @@ export const ProductCard = ({product}) => {
     
      
 
-    </div>
+    </motion.div>
     </>
   )
 }

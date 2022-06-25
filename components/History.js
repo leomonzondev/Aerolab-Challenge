@@ -28,16 +28,16 @@ const Card = ({item}) => {
   return (
     <div className='flex items-end justify-between mb-2 pr-8 '>
         <Image src={item.img.url} width={82} height={62} />
-        <div>
+        <div className='w-32'>
             <p className='text-black-200 text-sm'>{item.category}</p>
-            <p className='text-black-100 leading-4'>{item.name}</p>
+            <p className='text-black-100 leading-4 '>{item.name}</p>
         </div>
-        <div>
+        <div className='flex '>
           <p>x {item.quantity}</p>
         </div>
 
         <div className='flex items-center  gap-1'>
-            <p className='text-lg text-black-100'>{item.cost}</p>
+            <p className='text-lg text-black-100'>{item.cost * item.quantity}</p>
             <Image src={coin} width={24} height={24} />
         </div>
 

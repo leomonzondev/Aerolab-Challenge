@@ -82,7 +82,7 @@ export const Filter = ({ products, filterProducts, setProductsList, productsShow
                 
             <div className='md:mb-0 mb-2'>
                 <label htmlFor='tipo'></label>
-                <select defaultValue="all" onChange={(e) => handleValue(e)} id='tipo' className="  text-black-100  text-sm rounded-lg p-2.5 focus:outline-none">
+                <select defaultValue="all" onChange={(e) => handleValue(e)} id='tipo' className="text-black-100  text-sm rounded-lg p-2.5 focus:outline-none">
                     <option value="all" >All products</option>
                     {
                         categorys.map((category, i) => <option key={i}  value={category}>{category}</option>)
