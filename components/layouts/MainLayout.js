@@ -29,10 +29,6 @@ export const MainLayout = ({ children, title, pageDescription, imageFullUrl }) =
 
             </Head>
 
-            <nav className="md:pb-28 pb-20">
-                <Navbar />
-            </nav>
-
             <div className="w-fullh-56 md:h-[500px] h-48 ">
                 <div className="overflow-hidden md: md:mx-10 h-full bg-[url('../assets/header-x2.png')] bg-right md:bg-center bg-cover bg-no-repeat flex items-end">
              

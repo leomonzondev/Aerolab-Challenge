@@ -35,13 +35,22 @@ const reducer = ( state, action ) => {
         }
 
         case "REDEEMED": {
-            
+
             const exist = state.redeemed.find(item => item._id === payload._id)
-           
-            const add = exist ? [payload] : [...state.redeemed, payload]
+            const newArr = state.redeemed.map(item => {
+                    if(item.id === payload._id) {
+                        return { ...state.redeemed, quantity: item.quantity + 1}
+                    }
+                    return item
+            })
+            let add = ''
+            exist
+            ? add = newArr
+            : add = [...state.redeemed, payload]
+
            
 
-            return { ...state, redeemed: add }
+            return { ...state,  redeemed:add }
         }
 
         default:

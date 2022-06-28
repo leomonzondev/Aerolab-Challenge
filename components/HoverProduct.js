@@ -21,19 +21,20 @@ export const HoverProduct = ({ product, insufficientPoints }) => {
         dispatch({type: "BUY_PRODUCT", payload: product.cost - points})
 
         const exist = state.redeemed.find(item => item._id === product._id)
-
+        
+ 
         if(exist) {
             const newQ = exist.quantity += 1
-            
-            dispatch({type: "REDEEMED", payload: {...product, quantity: newQ }})
-        }else{
-            dispatch({type: "REDEEMED", payload: {...product, quantity: 1 }})
+            dispatch({type: "REDEEMED", payload:  {...product, quantity: newQ } })
+        } else {
+            dispatch({type: "REDEEMED", payload:  {...product, quantity: 1 } })
         }
+           
+            // const add = exist ? [payload] : [...state.redeemed, payload]
+
 
         enqueueSnackbar( `${product.name} redeemed`, { variant: "success"})
         
-
-
     }
 
 
